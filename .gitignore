@@ -1,0 +1,8 @@
+*.pidb
+*.VisualState.xml
+*.suo
+/ProjectGraph/bin
+/ProjectGraph/obj
+/UnitTests/bin
+/UnitTests/obj
+/UnitTests/TestResult.xml
