@@ -98,11 +98,29 @@ namespace de.ahzf.ProjectGraph
         #endregion
 
 
-        public WorkPackage AddWorkPackage(String Name)
+        public Participant AddParticipant(String ShortName, String LongName)
+        {
+
+            var Participant = new Participant(this.Vertex.OutDegree("HasParticipant") + 1,
+                                              Name,
+                                              Graph);
+
+            Graph.AddEdge(this.Vertex, "HasParticipant", Participant.Vertex);
+
+            return Participant;
+
+        }
+
+
+        public WorkPackage AddWorkPackage(String Name, ActivityType ActivityType, UInt32 StartMonth, UInt32 EndMonth, Double Force)
         {
 
             var WorkPackage = new WorkPackage(this.Vertex.OutDegree("HasWorkPackage") + 1,
                                               Name,
+                                              ActivityType,
+                                              StartMonth,
+                                              EndMonth,
+                                              Force,
                                               Graph);
 
             Graph.AddEdge(this.Vertex, "HasWorkPackage", WorkPackage.Vertex);

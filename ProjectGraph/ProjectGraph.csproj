@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityType.cs" />
+    <Compile Include="Participant.cs" />
+    <Compile Include="Objectives.cs" />
     <Compile Include="Milestone.cs" />
     <Compile Include="Deliverable.cs" />
     <Compile Include="WorkTask.cs" />
