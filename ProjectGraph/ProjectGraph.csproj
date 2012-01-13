@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Milestone.cs" />
+    <Compile Include="Deliverable.cs" />
     <Compile Include="WorkTask.cs" />
     <Compile Include="WorkPackage.cs" />
     <Compile Include="Project.cs" />

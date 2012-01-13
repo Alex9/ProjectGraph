@@ -54,6 +54,22 @@ namespace de.ahzf.ProjectGraph
             }
         }
 
+        public UInt64 NumberOfDeliverables
+        {
+            get
+            {
+                return (UInt64) this.Vertex.Out("HasWorkPackage").OutE("HasDeliverable").Count();
+            }
+        }
+
+        public UInt64 NumberOfMilestones
+        {
+            get
+            {
+                return this.Vertex.OutDegree("HasMilestone");
+            }
+        }
+
         #endregion
 
         #region Constructor(s)
@@ -92,6 +108,20 @@ namespace de.ahzf.ProjectGraph
             Graph.AddEdge(this.Vertex, "HasWorkPackage", WorkPackage.Vertex);
 
             return WorkPackage;
+
+        }
+
+
+        public Milestone AddMilestone(String Name, UInt32 Month, String Verification, String Text, params WorkPackage[] WorkPackagesInvolved)
+        {
+
+            var Milestone = new Milestone(this.Vertex.OutDegree("HasMilestone") + 1,
+                                          Name,
+                                          Graph);
+
+            Graph.AddEdge(this.Vertex, "HasMilestone", Milestone.Vertex);
+
+            return Milestone;
 
         }
 

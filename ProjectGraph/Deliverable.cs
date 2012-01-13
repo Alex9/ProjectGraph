@@ -7,23 +7,23 @@ using de.ahzf.Blueprints.PropertyGraphs;
 namespace de.ahzf.ProjectGraph
 {
 
-    public class WorkPackage
+    public class Deliverable
     {
 
         #region Properties
 
         /// <summary>
-        /// The Id of the work package.
+        /// The Id of the deliverable.
         /// </summary>
-        public UInt64 Id   { get; private set; }
+        public String Id { get; private set; }
 
         /// <summary>
-        /// The name of the work package.
+        /// The name of the deliverable.
         /// </summary>
         public String Name { get; private set; }
 
         /// <summary>
-        /// The property graph of the work package.
+        /// The property graph of the deliverable.
         /// </summary>
         public IGenericPropertyGraph<UInt64, Int64, String, String, Object,
                                      UInt64, Int64, String, String, Object,
@@ -31,7 +31,7 @@ namespace de.ahzf.ProjectGraph
                                      UInt64, Int64, String, String, Object> Graph { get; private set; }
 
         /// <summary>
-        /// The property vertex of the work package.
+        /// The property vertex of the deliverable.
         /// </summary>
         public IGenericPropertyVertex<UInt64, Int64, String, String, Object,
                                       UInt64, Int64, String, String, Object,
@@ -42,7 +42,7 @@ namespace de.ahzf.ProjectGraph
 
         #region Constructor(s)
 
-        public WorkPackage(UInt64 Id,
+        public Deliverable(String Id,
                            String Name,
                            IGenericPropertyGraph<UInt64, Int64, String, String, Object,
                                                  UInt64, Int64, String, String, Object,
@@ -56,40 +56,12 @@ namespace de.ahzf.ProjectGraph
 
             this.Vertex = Graph.AddVertex(v => v.SetProperty("Id_",   Id).
                                                  SetProperty("Name",  Name).
-                                                 SetProperty("Type",  "WorkPackage").
+                                                 SetProperty("Type",  "Deliverable").
                                                  SetProperty("class", this));
 
         }
 
         #endregion
-
-
-        public WorkTask AddWorkTask(String Name)
-        {
-
-            var WorkTask = new WorkTask(String.Concat(Id, ".", this.Vertex.OutDegree("HasWorkTask") + 1),
-                                        Name,
-                                        Graph);
-
-            Graph.AddEdge(this.Vertex, "HasWorkTask", WorkTask.Vertex);
-
-            return WorkTask;
-
-        }
-
-
-        public Deliverable AddDeliverable(String Name)
-        {
-
-            var Deliverable = new Deliverable(String.Concat(Id, ".", this.Vertex.OutDegree("HasDeliverable") + 1),
-                                              Name,
-                                              Graph);
-
-            Graph.AddEdge(this.Vertex, "HasDeliverable", Deliverable.Vertex);
-
-            return Deliverable;
-
-        }
 
     }
 
