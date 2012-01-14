@@ -30,8 +30,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ProjectGraph.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,15 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivityType.cs" />
-    <Compile Include="Participant.cs" />
-    <Compile Include="Objectives.cs" />
-    <Compile Include="Milestone.cs" />
-    <Compile Include="Deliverable.cs" />
-    <Compile Include="WorkTask.cs" />
-    <Compile Include="WorkPackage.cs" />
-    <Compile Include="Project.cs" />
+    <Compile Include="classes\ActivityType.cs" />
+    <Compile Include="classes\Participant.cs" />
+    <Compile Include="classes\Objectives.cs" />
+    <Compile Include="classes\Milestone.cs" />
+    <Compile Include="classes\Deliverable.cs" />
+    <Compile Include="classes\WorkTask.cs" />
+    <Compile Include="classes\WorkPackage.cs" />
+    <Compile Include="classes\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RESTService\AProjectService.cs" />
+    <Compile Include="RESTServer\IProjectServer.cs" />
+    <Compile Include="RESTService\IProjectService.cs" />
+    <Compile Include="RESTServer\ProjectServer.cs" />
+    <Compile Include="RESTService\ProjectService_ALL.cs" />
+    <Compile Include="RESTService\ProjectService_EVENTSTREAM.cs" />
+    <Compile Include="RESTService\ProjectService_HTML.cs" />
+    <Compile Include="RESTService\ProjectService_JSON.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\ahzf\Arrows.NET\Arrows\Arrows.csproj">
@@ -67,6 +79,10 @@
     <ProjectReference Include="..\..\..\ahzf\Blueprints.NET\PropertyGraphs\PropertyGraphs.csproj">
       <Project>{562AC94F-60EA-4911-8C62-684F02867783}</Project>
       <Name>PropertyGraphs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ahzf\Hermod\Hermod\Hermod.csproj">
+      <Project>{EAB20045-3D15-4220-BB56-B22FF6630AC9}</Project>
+      <Name>Hermod</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\ahzf\Pipes.NET\Pipes\Pipes.csproj">
       <Project>{3949790D-8591-4101-9E4D-CE7A758E7409}</Project>

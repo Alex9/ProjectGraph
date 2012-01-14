@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ProjectGraph")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A simple project and project proposal management")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Aperis GmbH")]
+[assembly: AssemblyCompany("ahzf.de")]
 [assembly: AssemblyProduct("ProjectGraph")]
-[assembly: AssemblyCopyright("Copyright © Aperis GmbH 2012")]
+[assembly: AssemblyCopyright("Copyright © Achim 'ahzf' Friedland 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
