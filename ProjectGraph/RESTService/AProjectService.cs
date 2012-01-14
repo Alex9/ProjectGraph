@@ -1,6 +1,6 @@
 ﻿/*
- * Copyright (c) 2011 Achim 'ahzf' Friedland <achim@ahzf.de>
- * This file is part of ProjectGraph <http://www.github.com/ahzf/ProjectGraph>
+ * Copyright (c) 2012 Achim 'ahzf' Friedland <achim.friedland@aperis.com>
+ * This file is part of ProjectGraph <http://www.github.com/Aperis/ProjectGraph>
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
